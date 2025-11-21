@@ -1,5 +1,6 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date: 21-11-2025
+## Reference Number: 25001187
 
 ## AIM
 To develop a Django Application to store and retrieve data from a E-Commerce Website Database for Amazon or Flipkart using Object Relational Mapping(ORM).
@@ -25,11 +26,31 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 
+~~~
+from django.contrib import admin # pyright: ignore[reportMissingModuleSource]
+from .models import amazon_DB,amazon_DBAdmin
+admin.site.register(amazon_DB,amazon_DBAdmin)
+~~~
+~~~
+from django.db import models  
+from django.contrib import admin
+class amazon_DB (models.Model):
+     Product_name=models.CharField(max_length=20)
+     S_no=models.IntegerField (primary_key=True)
+     Product_type=models.CharField(max_length=20)
+     Price=models.CharField(max_length=20)
+     Year=models.IntegerField()
+class amazon_DBAdmin(admin.ModelAdmin):
+     list_display=["Product_name","S_no","Product_type","Price","Year"]
+
+~~~
 
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![alt text](<Screenshot (4).png>) 
+![alt text](<Screenshot (3).png>)7
+
 
 
 ## RESULT
